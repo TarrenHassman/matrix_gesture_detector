@@ -62,10 +62,13 @@ class MatrixGestureDetector extends StatefulWidget {
   /// aligned relative to the size of this widget.
   final Alignment? focalPointAlignment;
 
+  final VoidCallback onLongPress;
+
   const MatrixGestureDetector({
     Key? key,
     required this.onMatrixUpdate,
     required this.child,
+    required this.onLongPress
     this.shouldTranslate = true,
     this.shouldScale = true,
     this.shouldRotate = true,
@@ -118,6 +121,7 @@ class _MatrixGestureDetectorState extends State<MatrixGestureDetector> {
     Widget child =
         widget.clipChild ? ClipRect(child: widget.child) : widget.child;
     return GestureDetector(
+      onLongPress: widget.onLongPress,
       behavior: widget.behavior,
       onScaleStart: onScaleStart,
       onScaleUpdate: onScaleUpdate,
