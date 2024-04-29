@@ -68,7 +68,7 @@ class MatrixGestureDetector extends StatefulWidget {
     Key? key,
     required this.onMatrixUpdate,
     required this.child,
-    required this.onLongPress
+    required this.onLongPress,
     this.shouldTranslate = true,
     this.shouldScale = true,
     this.shouldRotate = true,
